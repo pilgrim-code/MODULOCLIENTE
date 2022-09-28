@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'Cliente.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':'db.sqlite3',
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME':'ora/orcl',
+        'USER': 'jleal',
+        'PASSWORD': 'galletaleal',
+        'HOST': 'localhost',
+        'PORT': '1521' 
     }
 }
 
