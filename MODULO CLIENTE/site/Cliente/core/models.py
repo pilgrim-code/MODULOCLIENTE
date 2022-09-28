@@ -10,7 +10,7 @@ class cliente(models.Model):
     telefono = models.IntegerField(verbose_name='Telefono')
     correo = models.CharField(max_length=100, verbose_name='Correo electronico')
 
-#Tabla Carta
+#Tabla Cart
 class carta(models.Model):
     id_carta = models.AutoField(primary_key=True)
     nombre_carta = models.CharField(max_length=100, verbose_name='Nombre')

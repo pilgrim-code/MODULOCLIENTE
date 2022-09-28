@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'Cliente.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME':'ora/orcl',
+        'NAME':'orcl',
         'USER': 'jleal',
         'PASSWORD': 'galletaleal',
         'HOST': 'localhost',
