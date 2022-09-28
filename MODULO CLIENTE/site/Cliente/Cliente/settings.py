@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+  
 ]
 
 MIDDLEWARE = [
@@ -80,11 +81,12 @@ WSGI_APPLICATION = 'Cliente.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME':'ora/orcl',
-        'USER': 'jleal',
-        'PASSWORD': 'galletaleal',
+        'NAME':'orcl',
+        'USER': 'pilgrim',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
-        'PORT': '1521' 
+        'PORT': '1521',
+        
     }
 }
 
