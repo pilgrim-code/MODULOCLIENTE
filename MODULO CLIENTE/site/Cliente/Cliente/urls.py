@@ -21,5 +21,5 @@ from core.views import Template
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/',Template.toHome,name='index'),
+    path('index/',Template.toHome,name='home'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

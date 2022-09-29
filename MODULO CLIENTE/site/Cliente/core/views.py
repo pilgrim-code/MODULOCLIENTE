@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 
 class Template():
     def toHome(request):
-        return render(request,"index.html")
+        return render(request,"C:/Users/jorge/Desktop/Modulo_Django/MODULOCLIENTE/MODULO CLIENTE/site/templates/views/index.html")
 
 
 
