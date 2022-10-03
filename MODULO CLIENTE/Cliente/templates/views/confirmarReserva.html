@@ -11,13 +11,13 @@
     <div class="container">
       <div class="box-booking">
         <form class="rd-form rd-mailform booking-form">
-          <div>
-            <p class="booking-title">Nombre</p>
-            <div class="form-wrap">
-              <input class="form-input" placeholder="John Doe" id="booking-name" type="text" name="name" data-constraints="@Required">
-              <label class="form-label" for="booking-name"></label>
+            <div>
+                <p class="booking-title">Correo</p>
+                <input type="email" id="email" name="email" placeholder="john@itmasters.cl"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <label>
             </div>
-          </div>
+          
           <div>
             <p class="booking-title">Telefono</p>
             <div class="form-wrap">
@@ -25,21 +25,10 @@
               <label class="form-label" for="booking-phone"></label>
             </div>
           </div>
+          
+          
           <div>
-            <p class="booking-title">Fecha</p>
-            <div class="form-wrap form-wrap-icon"><span class="icon mdi mdi-calendar-text"></span>
-              <input type="datetime-local" id="Test_DatetimeLocal">
-            </div>
-          </div>
-          <div>
-            <p class="booking-title">Cantidad de personas</p>
-            <div class="form-wrap">
-              <input class="form-input" placeholder="2" id="cPersonas" type="number" name="cPersonas" data-constraints="@Numeric">
-              <label class="form-label" for="booking-phone"></label>
-            </div>
-          </div>
-          <div>
-            <button class="button button-lg button-gray-600"  type="submit">Ver disponibilidad</button>
+            <button class="button button-lg button-gray-600"  type="submit">Confirmar</button>
           </div>
         </form>
       </div>
