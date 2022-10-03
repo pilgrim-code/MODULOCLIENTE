@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexController.index, name='index'),
     path('agenda', Agenda.index, name='agenda'),
+    path('confirmarReserva', Agenda.cReserva, name='confirmarReserva'),
+     path('menu', IndexController.menu, name='menu'),
 ]
