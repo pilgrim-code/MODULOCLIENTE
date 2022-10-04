@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 {% load i18n static %}
 
 <div class="login">
@@ -25,6 +26,8 @@
 </div>
 
 
+=======
+>>>>>>> parent of 72faea4 (crear reserva falta hacerle el date picker y el combobox de la mesa)
 <link rel="stylesheet" href="static/css/bootstrap.css">
 <link rel="stylesheet" href="static/css/fonts.css">
 <link rel="stylesheet" href="static/css/style.css">
@@ -34,3 +37,54 @@
 <br>
 <br>
 <br>
+<section class="section-transform-top">
+    <div class="container">
+      <div class="box-booking">
+        <form class="rd-form rd-mailform booking-form">
+          <div>
+            <p class="booking-title">Nombre</p>
+            <div class="form-wrap">
+              <input class="form-input" placeholder="John Doe" id="booking-name" type="text" name="name" data-constraints="@Required">
+              <label class="form-label" for="booking-name"></label>
+            </div>
+          </div>
+          <div>
+            <p class="booking-title">Correo</p>
+            <input type="email" id="email" name="email" placeholder="john@itmasters.cl"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <label>
+          </div>
+          <div>
+            <p class="booking-title">Telefono</p>
+            <div class="form-wrap">
+              <input class="form-input" placeholder="+56912345678" id="booking-phone" type="number" name="telefono" data-constraints="@Numeric">
+              <label class="form-label" for="booking-phone"></label>
+            </div>
+          </div>
+          
+          <div>
+            <p class="booking-title">Cantidad de personas</p>
+            <div class="form-wrap">
+              <input class="form-input" placeholder="2" id="cPersonas" type="number" name="cPersonas" data-constraints="@Numeric">
+              <label class="form-label" for="booking-phone"></label>
+            </div>
+          </div>
+
+          <div>
+            <p class="booking-title">Fecha</p>
+            <div class="form-wrap form-wrap-icon">
+              <input type="datetime-local" id="Test_DatetimeLocal">
+              <br>
+              <br>
+            </div>
+           
+          </div>
+
+
+          <div>
+            <button class="button button-lg button-gray-600"  type="submit">Ver disponibilidad</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
