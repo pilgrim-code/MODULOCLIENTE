@@ -1,78 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>IT MASTERS</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/sheetslider.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
-    <script src="{% static 'js/jquery-3.3.1.min.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/bootstrap.bundle.js' %}" type="text/javascript"></script>
-    
-    <script src="{% static 'js/Uploadpicture.js' %}" type="text/javascript"></script>
-</head>
-
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand">
-                    <img src="{% static 'images/it.png' %}" class="imglogo" />IT MASTERS
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="/admin">Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="{% url 'index' %}" >Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="{% url 'productos' %}">Productos</a>
-                        </li>
-                        {% if user.is_authenticated %}
-                        <li>
-                            <a class="nav-link" href="{% url 'admin:logout' %}" >Logout</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="{% url 'mis_productos' %}">Mis Productos</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="{% url 'perfil' %}">Mi Perfil</a>
-                        </li>
-
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="{% url 'register' %}">Registrarse</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="{% url 'about' %}">About</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="{% url 'ias' %}">IA's</a>
-                        </li>
-                        
-
-
-                      
-
-                        {% endif %}
-                    </ul>
-                </div>
+<header class="section page-header">
+    <!-- RD Navbar-->
+    <div class="rd-navbar-wrap">
+      <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+        <div class="rd-navbar-main-outer">
+          <div class="rd-navbar-main">
+            <!-- RD Navbar Panel-->
+            <div class="rd-navbar-panel"> 
+              <!-- RD Navbar Toggle-->
+              <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+              <!-- RD Navbar Brand-->
+              <div class="rd-navbar-brand"><a href="index.html"><img class="brand-logo-light" src="images/logo-default1-140x57.png" alt="" width="140" height="57" srcset="images/logo-default-280x113.png 2x"/></a></div>
             </div>
-        </nav>
-    </header>
+            <div class="rd-navbar-main-element">
+              <div class="rd-navbar-nav-wrap">
+                <!-- RD Navbar Nav-->
+                <ul class="rd-navbar-nav">
+                  <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'agenda' %}">Reserva</a>
+                  </li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'confirmarReserva' %}">Confirmar Reserva</a>
+                  </li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'menu' %}">Menu</a>
+                  </li>
+                </ul><a class="button button-white button-sm" href="#">book now</a>
+              </div>
+            </div><a class="button button-white button-sm" href="#">book now</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  

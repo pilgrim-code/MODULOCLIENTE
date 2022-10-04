@@ -6,98 +6,13 @@
 
     <div id="container">
         <div id="header" class="bg-info">
-            <h1>Registro usuario</h1>
+            <h1>Registro Reserva</h1>
         </div>
         <div id="content-main">
             <form action="{{ app_path }}" method="post" id="login-form">
                 {% csrf_token %}
 
-                <table>
-                    <tbody>
-
-                        <tr>
-                            <td>
-
-                                <div class="form-group">
-                                    {{form.nombre.label_tag}}
-                                </div>
-
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    {{form.nombre}}
-                                </div>
-
-
-                            </td>
-
-                        </tr>
-
-
-                        <tr>
-                            <td>
-
-                           
-
-                            </td>
-                            <td>
-                               
-
-
-                            </td>
-
-                        </tr>
-
-                        <tr>
-                            
-
-                        </tr>
-
-                        <tr>
-                            <td>
-
-                                <div class="form-group">
-                                    {{form.email.label_tag}}
-                                </div>
-
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    {{form.email}}
-                                </div>
-
-
-                            </td>
-
-                        </tr>
-
-                        <tr>
-                          <td>
-
-                            <div class="form-group">
-                                {{form.fecha.label_tag}}
-                            </div>
-
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                {{form.fecha}}
-                            </div>
-
-
-                        </td>
-
-                        </tr>
-
-
-
-
-                    </tbody>
-                    <p class="errornote text-danger" >
-                        {{error}}
-                    </p>
-
-                </table>
+                 {{form}}
                 <div class="submit-row">
                     <input type="submit" value="Registrar" class="btn btn-success" >
                 </div>
@@ -108,6 +23,7 @@
     </div>
 
 </div>
+
 
 <link rel="stylesheet" href="static/css/bootstrap.css">
 <link rel="stylesheet" href="static/css/fonts.css">

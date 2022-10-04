@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Cliente.Controllers.indexController import IndexController
-from Cliente.Controllers.AgendaController import Agenda
+from App.views import Agenda
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexController.index, name='index'),
