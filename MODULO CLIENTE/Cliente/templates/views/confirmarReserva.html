@@ -1,3 +1,4 @@
+{% extends "header.html" %}
 <link rel="stylesheet" href="static/css/bootstrap.css">
 <link rel="stylesheet" href="static/css/fonts.css">
 <link rel="stylesheet" href="static/css/style.css">
@@ -7,6 +8,7 @@
 <br>
 <br>
 <br>
+{% block contenido %}
 <section class="section-transform-top">
     <div class="container">
       <div class="box-booking">
@@ -34,3 +36,4 @@
       </div>
     </div>
   </section>
+  {% endblock %}
