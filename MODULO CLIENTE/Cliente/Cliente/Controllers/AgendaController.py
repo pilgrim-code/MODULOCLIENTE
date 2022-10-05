@@ -1,23 +1,25 @@
 from django.shortcuts import render,HttpResponse
 from django.http import HttpResponseRedirect
-from ..Models.AgendarForm import SignUpForm
-
+from Cliente.Models.AgendarForm import SignUpForm
+from Cliente.Models.AgendarForm import Agendar
 from django.contrib import auth
+from App.models import *
 
 class Agenda():
     def index(request):
         #ESTE ES DE CREAR RESERVA LA MAGIA DEL FORMULARIO
         template = 'views/agenda.html'
         if request.method == 'POST':
-            form = SignUpForm(request.POST)
+            form = Agendar(request.POST)
             if form.is_valid():
                 dataEmail = None
                 email = form.cleaned_data.get('email')
+                
                 telefono = form.cleaned_data.get('telefono')
-                fecha= form.cleaned_data.get('fecha')
+               
                # user = form.cleaned_data.get('usuario')
                
-                userdb = Reserva.objects.filter(email=email)
+                userdb = Cliente.objects.filter(correo=email)
                # userdb = User.objects.all()
                 for item in userdb:
                     print(item)
@@ -40,10 +42,10 @@ class Agenda():
                     telefono = form.cleaned_data.get('telefono')
                     
                     Reserva.objects.create_user(
-                                             nombre_re=nombre,
-                                             fecha = fecha,
+                                             nombre=nombre,
+                                          
                                              telefono= telefono,
-                                             email=email,
+                                             correo=email,
                                              
                                             
                                              )
@@ -55,9 +57,9 @@ class Agenda():
                 return render(request,template,context)
             
         else:
-            context = {'form': SignUpForm()}
+            context = {'form': Agendar()}
         return render(request,template, context)
-       #return render(request,'views/agenda.html')
+    
     def cReserva(request):
         #ESTE ES DE CONFIRMAR RESERVA
         return render(request,'views/confirmarReserva.html')
