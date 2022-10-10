@@ -1,121 +1,116 @@
-
-{% load i18n static %}
-
-<div class="login">
-    <h1>Crea una reserva para poder degustar nuestros platos!</h1>
-
-    <div id="container">
-        <div id="header" class="bg-info">
-            <h1>Registro usuario</h1>
-        </div>
-        <div id="content-main">
-            <form action="{{ app_path }}" method="post" id="login-form">
-                {% csrf_token %}
-
-                <table>
-                    <tbody>
-
-                        <tr>
-                            <td>
-            
-
-                                <div class="form-group">
-                                    {{form.nombre.label_tag}}
-                                </div>
-
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    {{form.nombre}}
-                                </div>
+{% extends "header.html" %}
 
 
-                            </td>
+{% block contenido %}
+<section class="section-transform-center">
+    <div class="login">
+        <h1>Crea una reserva para poder degustar nuestros platos!</h1>
 
-                        </tr>
+        <div id="container">
+            <div id="header" class="bg-info">
+                <h1>Registro usuario</h1>
+            </div>
+            <div id="content-main">
+                <form action="{{ app_path }}" method="post" id="login-form">
+                    {% csrf_token %}
+
+                    <table>
+                        <tbody>
+
+                            <tr>
+                                <td>
+                
+
+                                    <div class="form-group">
+                                        {{form.nombre.label_tag}}
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        {{form.nombre}}
+                                    </div>
 
 
-                        <tr>
-                            <td>
+                                </td>
 
-                           
-
-                            </td>
-                            <td>
-                               
+                            </tr>
 
 
-                            </td>
+                            <tr>
+                                <td>
 
-                        </tr>
-
-                        <tr>
                             
 
-                        </tr>
+                                </td>
+                                <td>
+                                
 
-                        <tr>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                
+
+                            </tr>
+
+                            <tr>
+                                <td>
+
+                                    <div class="form-group">
+                                        {{form.email.label_tag}}
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        {{form.email}}
+                                    </div>
+
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
                             <td>
 
                                 <div class="form-group">
-                                    {{form.email.label_tag}}
+                                    {{form.fecha.label_tag}}
                                 </div>
 
                             </td>
                             <td>
                                 <div class="form-group">
-                                    {{form.email}}
+                                    {{form.fecha}}
                                 </div>
 
 
                             </td>
 
-                        </tr>
-
-                        <tr>
-                          <td>
-
-                            <div class="form-group">
-                                {{form.fecha.label_tag}}
-                            </div>
-
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                {{form.fecha}}
-                            </div>
-
-
-                        </td>
-
-                        </tr>
+                            </tr>
 
 
 
 
-                    </tbody>
-                    <p class="errornote text-danger" >
-                        {{error}}
-                    </p>
+                        </tbody>
+                        <p class="errornote text-danger" >
+                            {{error}}
+                        </p>
 
-                </table>
-                <div class="submit-row">
-                    <input type="submit" value="Registrar" class="btn btn-success" >
+                    </table>
+                    <div class="submit-row">
+                        <input type="submit" value="Registrar" class="btn btn-success" >
+                    </div>
+
                 </div>
-
             </div>
+
         </div>
 
     </div>
 
-</div>
-
-<link rel="stylesheet" href="static/css/bootstrap.css">
-<link rel="stylesheet" href="static/css/fonts.css">
-<link rel="stylesheet" href="static/css/style.css">
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+</section >
+{% endblock %}

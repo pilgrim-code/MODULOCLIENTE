@@ -1,13 +1,8 @@
-<link rel="stylesheet" href="static/css/bootstrap.css">
-<link rel="stylesheet" href="static/css/fonts.css">
-<link rel="stylesheet" href="static/css/style.css">
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<section class="section-transform-top">
+{% extends "header.html" %}
+
+{% block contenido %}
+<section class="section-transform-center">
+  <br>
     <div class="container">
       <div class="box-booking">
         <form class="rd-form rd-mailform booking-form">
@@ -33,4 +28,5 @@
         </form>
       </div>
     </div>
-  </section>
+</section>
+{% endblock%}
