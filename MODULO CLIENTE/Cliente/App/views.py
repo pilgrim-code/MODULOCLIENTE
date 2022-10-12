@@ -4,7 +4,22 @@ import datetime
 from .models import *
 
 # Create your views here.
+def verMenu(request):
+    comida = Carta.objects.all()
+    data = {'comida': comida}
+    return render(request,'comida.html',data)
 
+def elegirMesa(request):
+    mesa = Mesa.objects.filter(estado='d')
+    data = {'mesa': mesa}
+    '''nombre_r = 
+    fecha_r = 
+    telefono_r =
+    
+    reserva = Reserva.objects.create(id_reserva=1,nombre_re=nombre_r,fecha=fecha_r,telefono=telefono_r)
+    reserva.save()'''
+    
+    return render(request,'mesas.html',data)
 
 def probando(request):
     return render (request, 'probando.html')
@@ -15,13 +30,15 @@ def recibircliente(request):
     correo = request.POST['correo']
     fecha = request.POST['fecha']
     
-    import pdb
-    pdb.set_trace()        
+    #import pdb
+    #pdb.set_trace()        
 
     
-    add = Cliente.objects.create(id_cliente=10,nombre=nombre,telefono=telefono,correo=correo,fecha=fecha)
+    add = Cliente.objects.create(id_cliente=13,nombre=nombre,telefono=telefono,correo=correo,fecha=fecha)
+    
     add.save()
-    return redirect(to='index')
+   
+    return redirect(to='elegirMesa')
 
 def recibecliente(request):
     clientes = Cliente.objects.get(id_cliente=10)

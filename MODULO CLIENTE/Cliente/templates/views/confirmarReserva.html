@@ -5,7 +5,7 @@
   <br>
     <div class="container">
       <div class="box-booking">
-        <form class="rd-form rd-mailform booking-form">
+        <form class="rd-form rd-mailform booking-form" action="{% url 'comida' %}" method="post"> {% csrf_token%}
             <div>
                 <p class="booking-title">Correo</p>
                 <input type="email" id="email" name="email" placeholder="john@itmasters.cl"

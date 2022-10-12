@@ -31,7 +31,7 @@ urlpatterns = [
     path('dinamiclient', views.vertodoclient, name='dinamiclient'),
     path('editarclient/<int:id>',views.editarclient, name='editarclient'),
     path('editarclientepost',views.editarclientepost, name='editarclientepost'),
-
-
-
+    path('comida', views.verMenu, name='comida'),
+    path('elegirMesa/<int:id>', views.elegirMesa, name='elegirMesa'),
+    
 ]
