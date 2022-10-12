@@ -13,4 +13,5 @@ class Agenda():
     
     def cReserva(request):
         #ESTE ES DE CONFIRMAR RESERVA
+        
         return render(request,'views/confirmarReserva.html')

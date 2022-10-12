@@ -4,6 +4,20 @@ import datetime
 from .models import *
 
 # Create your views here.
+def confirmarReserva(request):
+    
+    return render(request,'confirmarReserva.html')
+
+def sesion(request, idsesion):
+    cli = Cliente.objects.get(id_cliente=idsesion)
+    
+    data = {
+    'cliente': cli
+    }
+    
+    return render (request, 'Bienvenida.html', data)
+
+
 def verMenu(request):
     comida = Carta.objects.all()
     data = {'comida': comida}
@@ -85,3 +99,7 @@ def editarclientepost(request):
     add.fecha = fecha
     add.save()
     return redirect(to='index')
+
+
+
+  
