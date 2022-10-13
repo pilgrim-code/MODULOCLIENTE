@@ -15,5 +15,5 @@ class Agendar(forms.Form):
     email = forms.EmailField(label='Email')
     fecha = forms.DateField()
 
-  
+
     

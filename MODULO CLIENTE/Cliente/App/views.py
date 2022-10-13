@@ -17,6 +17,14 @@ def sesion(request, idsesion):
     
     return render (request, 'Bienvenida.html', data)
 
+def confirmacion(request, idreserva):
+    _reserva = Reserva.objects.get(id_reserva=idreserva)
+    
+    datos = {
+    'reserva': _reserva
+    }
+    
+    return render (request, 'confirmarReserva.html', datos)
 
 def verMenu(request):
     comida = Carta.objects.all()

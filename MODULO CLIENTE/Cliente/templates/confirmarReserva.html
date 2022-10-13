@@ -1,32 +1,32 @@
 {% extends "header.html" %}
 
 {% block contenido %}
-<section class="section-transform-center">
-  <br>
-    <div class="container">
-      <div class="box-booking">
-        <form class="rd-form rd-mailform booking-form" action="{% url 'comida' %}" method="post"> {% csrf_token%}
-            <div>
-                <p class="booking-title">Correo</p>
-                <input type="email" id="email" name="email" placeholder="john@itmasters.cl"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                <label>
-            </div>
-          
-          <div>
-            <p class="booking-title">Telefono</p>
-            <div class="form-wrap">
-              <input class="form-input" placeholder="+56912345678" id="booking-phone" type="number" name="telefono" data-constraints="@Numeric">
-              <label class="form-label" for="booking-phone"></label>
-            </div>
-          </div>
-          
-          
-          <div>
-            <button class="button button-lg button-gray-600"  type="submit">Confirmar</button>
-          </div>
-        </form>
-      </div>
-    </div>
-</section>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confirmacion</title>
+</head>
+
+<body>
+
+  <form action="{% url 'confirmacion' %}" method="post">{% csrf_token%}
+
+    <label for="">Id de reserva</label>
+    <input type="text" name="name" id="name" value={{ reserva.id_reserva }}>
+<br>
+    <label for="">Nombre reserva</label>
+    <input type="text" name="name" id="name" value={{ reserva.nombre_re }}>
+<br>
+    <label for="">Telefono</label>
+    <input type="text" name="tel" id="tel" value={{ reserva.telefono }}>
+    <br>
+
+    <br><br>
+    <button type="submit">prueba</button>
+</form>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% endblock%}
