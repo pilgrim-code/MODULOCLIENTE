@@ -57,7 +57,8 @@ class Cliente(models.Model):
     nombre = models.CharField(max_length=100)
     telefono = models.BigIntegerField()
     correo = models.CharField(max_length=100, blank=True, null=True)
-
+    fecha = models.TextField(max_length=100, blank=True, null=True)
+    
     class Meta:
         managed = False
         db_table = 'cliente'

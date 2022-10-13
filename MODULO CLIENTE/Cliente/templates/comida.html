@@ -1,0 +1,22 @@
+<table id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            
+            <!-- <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in comida %}
+        <tr>
+            <td>{{ i.nombre_carta }}</td>
+            <td>{{ i.precio }}</td>
+            
+           
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>

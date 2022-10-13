@@ -13,14 +13,29 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django import views
 from django.contrib import admin
 from django.urls import path
 from Cliente.Controllers.indexController import IndexController
 from Cliente.Controllers.AgendaController import Agenda
+from App import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexController.index, name='index'),
     path('agenda', Agenda.index, name='agenda'),
-    path('confirmarReserva', Agenda.cReserva, name='confirmarReserva'),
-     path('menu', IndexController.menu, name='menu'),
+    path('confirmarReserva', views.confirmarReserva, name='confirmarReserva'),
+    path('sesion/<int:id>', views.sesion, name='sesion'),
+    path('menu', IndexController.menu, name='menu'),
+    path('probando', views.probando, name='probando'),
+    #guia
+    path('addcliente', views.recibircliente, name='addcliente'),
+    path('vercliente', views.recibecliente, name='vercliente'),
+    path('dinamiclient', views.vertodoclient, name='dinamiclient'),
+    #guia
+    path('editarclient/<int:id>',views.editarclient, name='editarclient'),
+    #guia
+    path('editarclientepost',views.editarclientepost, name='editarclientepost'),
+    path('comida', views.verMenu, name='comida'),
+    path('elegirMesa/<int:id>', views.elegirMesa, name='elegirMesa'),
+    
 ]

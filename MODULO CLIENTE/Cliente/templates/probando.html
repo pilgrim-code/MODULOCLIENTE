@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends "header.html" %}
+
+
+{% block contenido %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prueba</title>
+</head>
+
+<body>
+
+    <form action="{% url 'addcliente' %}" method="post">{% csrf_token%}
+        <label for="">Nombre cliente</label>
+        <input type="text" name="name" id="name">
+<br>
+        <label for="">Telefono</label>
+        <input type="text" name="tel" id="tel">
+        <br>
+         <label for="">Correo</label>
+        <input type="text" name="correo" id="correo">
+        <br><br>
+        <label for="">Fecha</label>
+        <input type="datetime-local" name="fecha" id="fecha">
+        
+        <br>
+      
+        <br>
+        <button type="submit">Agregar a bdd</button>
+    </form>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</html>
+{% endblock %}
