@@ -1,4 +1,4 @@
-{% extends "header.html" %}
+
 
 {% block contenido %}
 <html lang="en">
@@ -11,20 +11,16 @@
 
 <body>
 
-  <form action="{% url 'confirmacion' %}" method="post">{% csrf_token%}
+  <form action="{% url 'confirmar' reserva.id_reserva %}" method="post">{% csrf_token%}
 
-    <label for="">Id de reserva</label>
-    <input type="text" name="name" id="name" value={{ reserva.id_reserva }}>
+    <label for="">nombre</label>
+    <input type="text" name="nombre" id="name" value={{ reserva.nombre_re }}>
 <br>
-    <label for="">Nombre reserva</label>
-    <input type="text" name="name" id="name" value={{ reserva.nombre_re }}>
-<br>
-    <label for="">Telefono</label>
-    <input type="text" name="tel" id="tel" value={{ reserva.telefono }}>
-    <br>
+    <label for="">telefono</label>
+    <input type="text" name="telefono" id="name" value={{ reserva.telefono }}>
 
     <br><br>
-    <button type="submit">prueba</button>
+    <button type="submit">probando</button>
 </form>
 
 </body>

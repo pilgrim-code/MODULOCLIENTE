@@ -17,15 +17,6 @@ def sesion(request, idsesion):
     
     return render (request, 'Bienvenida.html', data)
 
-def confirmacion(request, idreserva):
-    _reserva = Reserva.objects.get(id_reserva=idreserva)
-    
-    datos = {
-    'reserva': _reserva
-    }
-    
-    return render (request, 'confirmarReserva.html', datos)
-
 def verMenu(request):
     comida = Carta.objects.all()
     data = {'comida': comida}
@@ -107,6 +98,14 @@ def editarclientepost(request):
     add.fecha = fecha
     add.save()
     return redirect(to='index')
+
+def confirmar(request, id):
+    c_reserva = Reserva.objects.get(id_reserva=id)
+
+    datos = {
+    'reserva': c_reserva,
+    }
+    return render (request, 'confirmarReserva.html', datos)
 
 
 

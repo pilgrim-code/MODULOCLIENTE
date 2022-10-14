@@ -158,7 +158,7 @@ class Receta(models.Model):
 
 
 class Reserva(models.Model):
-    id_reserva = models.BigIntegerField(primary_key=True)
+    id_reserva = models.IntegerField(db_column='ID_RESERVA', primary_key=True)
     nombre_re = models.CharField(max_length=100)
     fecha = models.DateField()
     telefono = models.BigIntegerField()
