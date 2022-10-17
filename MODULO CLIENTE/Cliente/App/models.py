@@ -161,7 +161,7 @@ class Reserva(models.Model):
     id_reserva = models.IntegerField(db_column='ID_RESERVA', primary_key=True)
     nombre_re = models.CharField(max_length=100)
     fecha = models.DateField()
-    telefono = models.BigIntegerField()
+    telefono = models.IntegerField(db_column='TELEFONO')
     cliente_id_cliente = models.ForeignKey(Cliente, models.DO_NOTHING, db_column='cliente_id_cliente', blank=True, null=True)
 
     class Meta:

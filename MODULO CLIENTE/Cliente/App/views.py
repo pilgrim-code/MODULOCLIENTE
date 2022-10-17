@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse,Http404, HttpResponseRedirect
 import datetime
+from django.shortcuts import redirect, render
 from .models import *
+from django.forms import ValidationError
 
 # Create your views here.
 def confirmarReserva(request):
@@ -107,6 +109,16 @@ def confirmar(request, id):
     }
     return render (request, 'confirmarReserva.html', datos)
 
+def listar_reserva(request):
+    reserva = Reserva.objects.all()
+    return render (request, 'listar_reserva.html', {'reserva': reserva})
 
-
-  
+def validar(request):
+    reserva = Reserva.objects.all()
+    if request.method == "POST":
+        nombre_re = request.POST['nombre']
+        telefono = request.POST['telefono']
+        if Reserva.objects.filter(nombre_re=nombre_re).exists():
+            return render(request, 'listar_reserva.html',{'reserva': reserva})
+        else:
+            return render (request, 'listar_reserva.html')

@@ -11,13 +11,13 @@
 
 <body>
 
-  <form action="{% url 'confirmar' reserva.id_reserva %}" method="post">{% csrf_token%}
+  <form action="{% url 'validar' %}" method="post">{% csrf_token%}
 
     <label for="">nombre</label>
-    <input type="text" name="nombre" id="name" value={{ reserva.nombre_re }}>
+    <input type="text" name="nombre" id="nombre" value={{ Reserva.nombre_re }}>
 <br>
     <label for="">telefono</label>
-    <input type="text" name="telefono" id="name" value={{ reserva.telefono }}>
+    <input type="text" name="telefono" id="telefono" value={{ Reserva.telefono }}>
 
     <br><br>
     <button type="submit">probando</button>
