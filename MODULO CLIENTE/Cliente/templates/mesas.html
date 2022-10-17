@@ -1,72 +1,69 @@
-<!DOCTYPE html>
 {% extends "header.html" %}
-
 {% block contenido %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos para el admin</title>
-</head>
-<section class="section-transform-center">
-    <br>
-<body>
-    <form action="{% url 'elegirMesa' %}" method="post">{% csrf_token%}
-    <label id="label">-</label>
 
-    <br>
-    <button onclick="myfunction()">
-        Click Here!
-    </button>
-    <br>
+<section>
 
-    <input type="datetime-local" name="fecha" id="fecha">
+    <body>
         <br>
-    <select>
 
-        <option disabled="true" selected>- Mesas -</option>
-        {%for i in mesa%}
-        <option>{{i.id_mesa}}</option>
-        {% endfor %}
-    </select>
+        <form action="{% url 'elegirMesa' %}" method="post">{% csrf_token %}
+            <label id="label">-</label>
 
-    <table id="dataTable" width="100%" cellspacing="0">
-        <thead>
-            <tr>
-                <th>Mesa</th>
-                <th>Cantidad Personas</th>
-                <th>disponibilidad</th>
-                <th>Accion</th>
-              
-            </tr>
-        </thead>
-       
-        <tbody>
-            {% for i in mesa %}
-            <tr>
-                <td>{{ i.id_mesa }}</td>
-                <td>{{ i.cantidad_personas }}</td>
-                <td>{{ i.estado }}</td>
-               
-                <td><a href="aviso"><button type="button" class="btn btn-primary">Reservar</button></a></td>
+            <br>
+            <button onclick="myfunction()">
+                Click Here!
+            </button>
+            <br>
 
-            </tr>
-            {% endfor %}
-        </tbody>
-        </table>
-    </form>
+            <input type="datetime-local" name="fecha" id="fecha">
+            <br>
+            <select>
+
+                <option disabled="true" selected>- Mesas -</option>
+                {%for i in mesa%}
+                <option>{{i.id_mesa}}</option>
+                {% endfor %}
+            </select>
+
+            <table id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Mesa</th>
+                        <th>Cantidad Personas</th>
+                        <th>disponibilidad</th>
+                        <th>Accion</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for i in mesa %}
+                    <tr>
+                        <td>{{ i.id_mesa }}</td>
+                        <td>{{ i.cantidad_personas }}</td>
+                        <td>{{ i.estado }}</td>
+
+                        <td><a href="aviso"><button type="button" class="btn btn-primary">Reservar</button></a></td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
 
         <script>
             function myfunction() {
-              var x = document.getElementById("fecha").value;
-              document.getElementById("label").innerHTML = x;
+                var x = document.getElementById("fecha").value;
+                document.getElementById("label").innerHTML = x;
             }
-            </script>
+        </script>
 
-</body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</section >
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</section>
+
 {% endblock %}
-</html>

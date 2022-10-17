@@ -26,12 +26,7 @@ def verMenu(request):
 def elegirMesa(request):
     mesa = Mesa.objects.filter(estado='d')
     data = {'mesa': mesa}
-    '''nombre_r = 
-    fecha_r = 
-    telefono_r =
     
-    reserva = Reserva.objects.create(id_reserva=1,nombre_re=nombre_r,fecha=fecha_r,telefono=telefono_r)
-    reserva.save()'''
     
     return render(request,'mesas.html',data)
 
@@ -48,7 +43,7 @@ def recibircliente(request):
     #pdb.set_trace()        
 
     
-    add = Cliente.objects.create(id_cliente=13,nombre=nombre,telefono=telefono,correo=correo,fecha=fecha)
+    add = Cliente.objects.create(id_cliente=14,nombre=nombre,telefono=telefono,correo=correo,fecha=fecha)
     
     add.save()
    

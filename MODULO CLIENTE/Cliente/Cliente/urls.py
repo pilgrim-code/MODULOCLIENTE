@@ -25,7 +25,6 @@ urlpatterns = [
     path('agenda', Agenda.index, name='agenda'),
     path('confirmarReserva', views.confirmarReserva, name='confirmarReserva'),
     path('sesion/<int:id>', views.sesion, name='sesion'),
-    path('menu', IndexController.menu, name='menu'),
     path('probando', views.probando, name='probando'),
     #guia
     path('addcliente', views.recibircliente, name='addcliente'),
@@ -36,6 +35,6 @@ urlpatterns = [
     #guia
     path('editarclientepost',views.editarclientepost, name='editarclientepost'),
     path('comida', views.verMenu, name='comida'),
-    path('elegirMesa/<int:id>', views.elegirMesa, name='elegirMesa'),
+    path('elegirMesa/', views.elegirMesa, name='elegirMesa'),
     
 ]
