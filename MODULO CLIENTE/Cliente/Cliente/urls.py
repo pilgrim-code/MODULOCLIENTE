@@ -24,6 +24,10 @@ urlpatterns = [
     path('', IndexController.index, name='index'),
     path('agenda', Agenda.index, name='agenda'),
     path('confirmarReserva', views.confirmarReserva, name='confirmarReserva'),
+    path('confirmar/<int:id>', views.confirmar, name='confirmar'),
+    path('validar', views.validar, name='validar'),
+    path('listar_reserva', views.listar_reserva, name='Listado'),
+    path('sesion/<int:id>', views.sesion, name='sesion'),
     path('sesion/<int:id>', views.sesion, name='sesion'),
     path('probando', views.probando, name='probando'),
     #guia
