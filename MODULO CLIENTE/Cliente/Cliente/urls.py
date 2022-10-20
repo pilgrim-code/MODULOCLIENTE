@@ -26,8 +26,7 @@ urlpatterns = [
     path('confirmarReserva', views.confirmarReserva, name='confirmarReserva'),
     path('confirmar/<int:id>', views.confirmar, name='confirmar'),
     path('validar', views.validar, name='validar'),
-    path('listar_reserva', views.listar_reserva, name='Listado'),
-    path('sesion/<int:id>', views.sesion, name='sesion'),
+    path('listar_reserva/<int:id>', views.listar_reserva, name='listar_reserva'),
     path('sesion/<int:id>', views.sesion, name='sesion'),
     path('probando', views.probando, name='probando'),
     #guia
@@ -37,8 +36,13 @@ urlpatterns = [
     #guia
     path('editarclient/<int:id>',views.editarclient, name='editarclient'),
     #guia
+    path('header/',views.editarclientepost, name='header/'),
     path('editarclientepost',views.editarclientepost, name='editarclientepost'),
     path('comida', views.verMenu, name='comida'),
     path('elegirMesa/', views.elegirMesa, name='elegirMesa'),
-    
+    path('cerrarSesion/', views.elegirMesa, name='cerrarSesion'),
+    path('elegirMesa/', views.elegirMesa, name='elegirMesa'),
+    path('pedidos/', views.elegirMesa, name='pedidos'),
+    path('filter-data-id', views.filter_idsito, name='filter-id'),
+
 ]

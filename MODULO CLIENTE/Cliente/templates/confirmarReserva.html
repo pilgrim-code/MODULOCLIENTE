@@ -1,6 +1,8 @@
+{% include "navbar.html" %}
 
 
 {% block contenido %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +13,7 @@
 
 <body>
 
-  <form action="{% url 'validar' %}" method="post">{% csrf_token%}
+  <form action="#" method="post">{% csrf_token%}
 
     <label for="">nombre</label>
     <input type="text" name="nombre" id="nombre" value={{ Reserva.nombre_re }}>
@@ -20,9 +22,63 @@
     <input type="text" name="telefono" id="telefono" value={{ Reserva.telefono }}>
 
     <br><br>
-    <button type="submit">probando</button>
+    <button id="buttonsito" type="submit" hidden>probando</button>
 </form>
-
+<div id="filterid">
+    {% include 'includes/filter_id.html' %}
+</div>
+<button onclick="filterId()">probando</button>
 </body>
+<script>
+   
+    function filterId(){
+        let csrftoken = '{{ csrf_token }}'
+        var nombre = $("#nombre").val();
+        var telefono = $("#telefono").val();
+
+        console.log(nombre);
+        console.log(telefono);
+
+        $.ajax({
+          type: "POST",
+          url: "{% url 'filter-id' %}",
+          data: {
+            'nombre':nombre,
+            'telefono': telefono,
+            },
+          dataType:'json',
+          // headers: { "X-CSRFToken": $( 'meta[name="csrf-token"]' ).attr( 'content') },
+          // headers: { "X-CSRFToken": $.cookie("csrftoken") },
+          headers:{'X-CSRFToken':csrftoken},
+            success: function (json) {
+                console.log(json.filteridsito_html);
+                document.getElementById('filterid').innerHTML = json['filteridsito_html'];
+                // document.querySelector("#filter_mat").innerHTML = json.filter_mat_html;
+                // $('#filter_mat').html(json.filter_mat_html);
+                apretarboton();
+                //idreal = $("#idsito").val();
+                //window.location.href = "/listar_reserva/"+idreal+"";
+
+
+            },
+            error: function (xhr, errmsg, err) {
+                console.log(xhr.status + ": " + xhr.responseText);
+                console.log('no funcione')
+            },
+        })
+    }
+
+    function apretarboton(){
+        idreal = $("#idsito").val();
+        if(idreal.length > 0)
+        {
+            window.location.href = "/listar_reserva/"+idreal+"";
+
+        }     
+        else{
+         alert("no tienes ninguna reserva")
+        }
+     }
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% endblock%}

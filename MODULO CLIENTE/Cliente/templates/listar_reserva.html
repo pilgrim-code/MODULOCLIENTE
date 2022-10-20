@@ -1,5 +1,8 @@
-<!DOCTYPE html>
+
+{% include "navbar.html" %}
+{% block contenido %}
 <html lang="en">
+   
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,28 +11,33 @@
 </head>
 <body>
 
-{% if reserva %}
-    <h1>Si existe reserva</h1>
+<section class="section-transform-center">
+    <h1>Reserva Confirmada!</h1>
     <table id="dataTable" width="100%" cellspacing="0">
         <thead>
             <tr>
                 <th>Nombre Cliente</th>
                 <th>Telefono</th>
+                <th>Fecha</th>
+                <th>Sesion Activa</th>
+                <th>Mesa Nro</th>
             </tr>
         </thead>
         <tbody>
-            {% for i in reserva %}
             <tr>
-                <td>{{ i.nombre_re }}</td>
-                <td>{{ i.telefono }}</td>
+                <td>{{ reserva.nombre_re }}</td>
+                <td>{{ reserva.telefono }}</td>
+                <td>{{ reserva.fecha }}</td>
+                <td>{{ reserva.sesion }}</td>
+                <td>{{mesa.id_mesa}}</td>
             </tr>
-            {% endfor %}
+
         </tbody>
     </table>
-{% else %}
-    <h1>No existen reservas</h1>
-{% endif %}
+    <h2>Te invitamos a crear tu pedido desde nuestra carta para comenzar la experiencia!</h2>
+    <li class="rd-nav-item"><a class="rd-nav-link" href="comida/{{mesa.id_mesa}}">Crear Pedido</a>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+</section >
+{% endblock%}
 </html>

@@ -1,4 +1,4 @@
-{% extends "header.html" %}
+{% include "navbar.html" %}
 
 
 {% block contenido %}
@@ -6,6 +6,7 @@
 <table id="dataTable" width="100%" cellspacing="0">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Precio</th>
             
@@ -17,8 +18,10 @@
     <tbody>
         {% for i in comida %}
         <tr>
+            <td>{{ i.id_carta }}</td>
             <td>{{ i.nombre_carta }}</td>
             <td>{{ i.precio }}</td>
+            <td><a href="/agregar/{{ i.id_carta }}"><button type="button" class="btn btn-primary">pedir</button></a></td>
             
            
         </tr>

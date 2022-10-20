@@ -163,7 +163,7 @@ class Reserva(models.Model):
     fecha = models.DateField()
     telefono = models.IntegerField(db_column='TELEFONO')
     cliente_id_cliente = models.ForeignKey(Cliente, models.DO_NOTHING, db_column='cliente_id_cliente', blank=True, null=True)
-
+    sesion = models.CharField(max_length=1, blank=True, null=True)
     class Meta:
         managed = False
         db_table = 'reserva'
